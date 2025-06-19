@@ -1,11 +1,10 @@
 
 import streamlit as st
 import gzip
-import pickle
+import joblib
 
-# Load compressed model
-with gzip.open("calorie_model.pkl.gz", "rb") as f:
-    model = pickle.load(f)
+with gzip.open("calorie_model.joblib.gz", "rb") as f:
+    model = joblib.load(f)
 
 # App title
 st.title("Calorie Burn Calculator")
